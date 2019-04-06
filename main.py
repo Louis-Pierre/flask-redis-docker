@@ -22,7 +22,7 @@ app.register_blueprint(blueprint2)
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Hello World !"
 
 
 

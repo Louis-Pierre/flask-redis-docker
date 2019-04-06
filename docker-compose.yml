@@ -1,0 +1,8 @@
+  version: '3'
+  services:
+    redis-server:
+      image : 'redis'
+    flask-redis:
+      build: .
+      ports:
+        - "4001:80"

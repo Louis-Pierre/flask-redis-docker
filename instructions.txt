@@ -1,0 +1,22 @@
+##Se placer dans le folder flask-REDIS
+
+##type : "docker-compose up"
+
+## Using the docker-compose.yml file, this will start 2 containers
+    - One with the redis server
+    - The other with the flask app
+
+##
+Given our port mapping in docker-compose. The flask app is exposed on port 4001
+
+
+##
+The 2 containers (redis server and flask app) will be able to communicate.
+in redis.py file, we specified our host as "redis-server"
+That corresponds to the name given to redis in the docker-compose file
+
+
+## to stop both container
+## stay in flask-REDIS folder
+##type : "docker-compose down"
+

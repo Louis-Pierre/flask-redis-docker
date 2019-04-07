@@ -7,4 +7,18 @@ before_install :
 
 
 script :
-  - docker run flask-redis-test -- --coverage
+  - docker run flask-redis-test
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: flask_redis_test
+  env: FlaskRedisTest-env
+  bucket_name: "elasticbeanstalk-us-east-2-630618059669"
+  bucket_path: "flask_redis_test"
+  on:
+    branch: master
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"

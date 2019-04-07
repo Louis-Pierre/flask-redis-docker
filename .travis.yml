@@ -2,7 +2,7 @@ sudo: required
 services:
   - docker
 
-language: python
+#language: python
 
 before_install :
   - docker build -f Dockerfile . -t flask-redis-test
@@ -19,6 +19,7 @@ deploy:
   env: FlaskRedisTest-env
   bucket_name: "elasticbeanstalk-us-east-2-630618059669"
   bucket_path: "flask_redis_test"
+  script: docker run flask-redis-test
   on:
     branch: master
   access_key_id: "$AWS_ACCESS_KEY"

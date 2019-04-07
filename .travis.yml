@@ -4,12 +4,15 @@ services:
 
 #language: python
 
-before_install :
-  - docker build -f Dockerfile . -t flask-redis-test
+#before_install :
+#  - docker build -f Dockerfile . -t flask-redis-test
 
 
 #script :
 #  - docker run flask-redis-test
+
+script :
+  - docker build -f Dockerfile . -t flask-redis-test
 
 
 deploy:
